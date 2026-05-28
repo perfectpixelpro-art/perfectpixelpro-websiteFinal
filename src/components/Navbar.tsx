@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import logo from '../assets/logo.png';
 
-
 interface MenuItem {
   label: string;
   href: string;
@@ -40,11 +39,11 @@ export default function Navbar(): JSX.Element {
   return (
     <nav className="w-full bg-white" style={{ fontFamily: 'Archivo, sans-serif' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Desktop Layout - Centered */}
-        <div className="flex flex-col items-center justify-center py-8">
+        {/* Centered Layout - Works on all screens */}
+        <div className="flex flex-col items-center justify-center py-6 sm:py-8">
           {/* Logo */}
-          <div className="mb-10">
-            <a href="#" className="inline-block">
+          <div className="mb-6 sm:mb-10">
+           <a href="#" className="inline-block">
   <img 
     src={logo} 
     alt="PPP Logo" 
@@ -53,8 +52,8 @@ export default function Navbar(): JSX.Element {
 </a>
           </div>
 
-          {/* Desktop Menu - Centered */}
-          <div className="flex items-center space-x-12">
+          {/* Menu - Responsive and Centered */}
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-12">
             {menuItems.map((item: MenuItem) => (
               <div
                 key={item.label}
@@ -69,7 +68,7 @@ export default function Navbar(): JSX.Element {
                 }}
               >
                 <button
-                  className="flex items-center space-x-1.5 font-medium text-base whitespace-nowrap py-2 transition-colors duration-200"
+                  className="flex items-center space-x-1 font-medium text-xs sm:text-sm lg:text-base whitespace-nowrap py-1 sm:py-2 transition-colors duration-200"
                   style={{
                     color: hoveredLink === item.label ? '#F70D1A' : '#000000',
                     background: 'none',
