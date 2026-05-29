@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import logo from '../assets/logo.png';
+import "@fontsource/archivo/300.css";
+import "@fontsource/archivo/300-italic.css";
 
 interface MenuItem {
   label: string;
@@ -16,7 +18,7 @@ export default function Navbar(): JSX.Element {
 
   const menuItems: MenuItem[] = [
     { label: 'Work', href: '#' },
-    { label: 'About Us', href: '#' },
+   
     {
       label: 'Life at PPP',
       href: '#',
@@ -24,6 +26,7 @@ export default function Navbar(): JSX.Element {
         { label: 'Our Culture', href: '#' },
         { label: 'Team & People', href: '#' },
         { label: 'Benefits & Perks', href: '#' },
+         { label: 'About Us', href: '#' },
       ],
     },
     {
@@ -39,7 +42,7 @@ export default function Navbar(): JSX.Element {
   ];
 
   return (
-    <nav className="w-full bg-white" style={{ fontFamily: 'Archivo, sans-serif' }}>
+    <nav className="w-full bg-white mt-6" style={{ fontFamily: 'Archivo, sans-serif' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Desktop - Centered Layout */}
         <div className="hidden md:flex flex-col items-center justify-center py-6 sm:py-8" style={{ overflow: 'visible' }}>
